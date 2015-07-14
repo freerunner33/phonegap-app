@@ -11,7 +11,7 @@ html, body {
 }
 
 h1 {
-	color: blue;
+	color: rgb(12, 183, 240);
 }
 
 div#header {
@@ -29,13 +29,24 @@ div#buttons {
 
 div div {
 	display: inline-block;
-	border: 1px solid blue;
+	border: 1px solid rgb(12, 183, 240);
+	border-radius: 10px;
+	margin: 1em;
 	text-align: center;
-	padding: 0em;
+	padding: 1em;
+}
+
+div div:active {
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 div div img {
-	width: 45vw;
+	width: 40vw;
 	padding: 0;
 	margin: 0;
+}
+
+div#footer {
+	text-align: center;
+	color: rgb(12, 183, 240);
 }
