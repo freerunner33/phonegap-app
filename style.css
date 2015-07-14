@@ -13,3 +13,16 @@ html, body {
 h1 {
 	color: blue;
 }
+
+div {
+	display: inline-block;
+	border: 2px solid rgb(0, 255, 0);
+}
+
+img {
+	height: 20vw;
+}
+
+div:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
