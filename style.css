@@ -50,7 +50,6 @@ div#menu {
 }
 
 div#menu.active {
-	opacity: 0;
 	transform: translate(0, 0);
 }
 
