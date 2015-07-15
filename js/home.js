@@ -1,8 +1,7 @@
 
 document.addEventListener('deviceready', function() {
 	$("div#header img").click(function() {
-		$("div#menu").addClass("active")
-		alert("HEEEEEEEY")
+		$("div#menu").toggleClass("active")
 	})
 }, false);
 
