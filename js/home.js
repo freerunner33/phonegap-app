@@ -40,18 +40,7 @@ document.addEventListener('deviceready', function() {
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
 	})
-}, false)
-
-$(document).ready(function() {
-	$("div#header img").click(function() {
-		$("div#menu").toggleClass("active")
-		$("div#overlay").toggleClass("active")
-	})
-	$("div#overlay").click(function() {
-		$("div#menu").toggleClass("active")
-		$("div#overlay").toggleClass("active")
-	})
 	$("div#dining>div").click(function() {
 		open(dining[$(this).attr('id')].page, "_self")
 	})
-})
+}, false)
