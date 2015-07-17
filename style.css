@@ -1,4 +1,4 @@
-
+/*Top stuff, html body, tap settings*/
 * {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-tap-highlight-color: transparent;
@@ -37,7 +37,6 @@ div#header img {
 	vertical-align: middle;
 	padding: 0.5em;
 }
-
 
 /*Menu stuff*/
 div#menu {
@@ -84,7 +83,7 @@ div#menu a {
 	width: calc(100% - 3em);
 	color: white;
 	text-decoration: none;
-	padding: 0.75em 1.5em;
+	padding: 0.5em 1.5em;
 	margin: 0;
 	font-size: 1.25em;
 	font-weight: 300;
@@ -93,7 +92,6 @@ div#menu a {
 div#menu a:first-child {
 	padding-top: 4em;
 }
-
 
 /*Main page display
 	Large dining div
@@ -117,10 +115,11 @@ div div div {
 	height: 100%;
 	background-position: center;
 	background-size: cover;
-	z-index: -1;
+	z-index: 49;
 }
 
 div div h3 {
+	z-index: 50;
 	position: absolute;
 	top: 50%;
 	left: 10%;
@@ -140,11 +139,10 @@ div#dining div:active div {
 	transform: scale3d(1.5, 1.3, 1.3);
 }
 
-
 /*Main div for each dining location
 	Will hold logo of location on top
 	div on bottom contains 3 different sections
-		swipe through these sections - about, info, menu*/
+		nav through these sections - about, info, menu*/
 div#main {
 	padding-top: 4em;
 	color: white;
@@ -154,6 +152,27 @@ div#main img {
 	width: 100%;
 }
 
+div#main nav {
+	display: block;
+	width: 100%;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+div#main nav a {
+	display: inline-block;
+	color: #ddd;
+	width: 33%;
+	font-size: 1em;
+	padding: 0.375em 0;
+	text-align: center;
+	background-color: rgb(4, 52, 128);
+}
+div#main nav a.active {
+	color: white;
+	background-color: rgb(4, 62, 138);
+}
+
+/*Section stuff and transitions*/
 div#main section {
 	padding: 0.5em;
 	width: calc(100% - 1em);
@@ -165,7 +184,6 @@ div#main section {
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0.5s, 0s;
 }
-
 div#main section.active {
 	/*enter*/
 	transform: translate(0, 0);
@@ -174,11 +192,27 @@ div#main section.active {
 	transition-delay: 0s, 0s;
 }
 
+/*Text in section*/
 div#main section h1 {
+	margin-top: 0.125em;
+	padding-bottom: 0.25em;
+	text-align: center;
+	line-height: 1em;
+	border-bottom: 1px solid white;
+}
+div#main section h3 {
 	text-align: center;
 	line-height: 1em;
 }
+div#main section h4 {
+	margin: 0.5em 0;
+}
+div#main section p {
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
 
+/*Table for menu*/
 div#main section table {
 	text-align: left;
 	margin: 0 auto;
@@ -191,12 +225,21 @@ div#main section table td, div#main section table th {
 	border: 1px solid white;
 }
 
-
+div#wrapper {
+	min-height: calc(100vh - 2em);
+}
 div#footer {
-	position: fixed;
+	height: 2em;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	text-align: center;
 	color: rgb(12, 183, 240);
+	background-color: #222;
+}
+div#footer p {
+	margin: 0;
+	color: rgb(6, 118, 194);
+	padding: 0.5em;
+	line-height: 1em;
 }
