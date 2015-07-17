@@ -201,6 +201,7 @@ div#main section h1 {
 	border-bottom: 1px solid white;
 }
 div#main section h3 {
+	position: relative;
 	text-align: center;
 	line-height: 1em;
 }
