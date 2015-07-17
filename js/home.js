@@ -47,5 +47,7 @@ document.addEventListener('deviceready', function() {
 	$("div#main nav a").click(function() {
 		$("div#main section.active").removeClass("active")
 		$("div#main nav a.active").removeClass("active")
+		$("div#main section#" + $(this).attr("id")).addClass("active")
+		$("div#main nav a#" + $(this).attr("id")).addClass("active")
 	})
 }, false)
