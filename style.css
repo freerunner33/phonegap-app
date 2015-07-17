@@ -225,6 +225,7 @@ div#main section table td, div#main section table th {
 	border: 1px solid white;
 }
 
+/*Footer and wrapper*/
 div#wrapper {
 	min-height: calc(100vh - 2em);
 }
