@@ -11,6 +11,7 @@ html, body {
 	font-family: 'Lato', sans-serif;
 }
 
+/*Header stuff*/
 div#header {
 	z-index: 100;
 	position: fixed;
@@ -38,7 +39,7 @@ div#header img {
 }
 
 
-
+/*Menu stuff*/
 div#menu {
 	position: fixed;
 	top: 0;
@@ -94,12 +95,15 @@ div#menu a:first-child {
 }
 
 
-
+/*Main page display
+	Large dining div
+		Smaller div to hold h3 and picture div*/
 div#dining {
 	padding-top: 4em;
 	text-align: center;
 }
 
+/*Divs to hold h3 and picture divs*/
 div#dining>div {
 	width: 100%;
 	height: 30vh;
@@ -108,6 +112,7 @@ div#dining>div {
 	overflow: hidden;
 }
 
+/*The picture divs*/
 div div div {
 	height: 100%;
 	background-position: center;
@@ -130,11 +135,16 @@ div div h3 {
 	text-transform: uppercase;
 }
 
+/*When you click dining location div (lvl 2) make bigger*/
 div#dining div:active div {
 	transform: scale3d(1.5, 1.3, 1.3);
 }
 
 
+/*Main div for each dining location
+	Will hold logo of location on top
+	div on bottom contains 3 different sections
+		swipe through these sections - about, info, menu*/
 div#main {
 	padding-top: 4em;
 	color: white;
@@ -144,18 +154,49 @@ div#main img {
 	width: 100%;
 }
 
-div#main section#info {
+div#main section {
 	padding: 0.5em;
+	width: calc(100% - 1em);
+	position: absolute;
+	
+	/*exit*/
+	transform: translate(-100%, 0);
+	opacity: 0;
+	transition: transform 0s ease, opacity 0.5s ease;
+	transition-delay: 0.5s, 0s;
 }
 
-div#main section#info h1 {
-	margin: 0;
+div#main section.active {
+	/*enter*/
+	transform: translate(0, 0);
+	opacity: 1;
+	transition: transform 0s ease, opacity 0.5s ease;
+	transition-delay: 0s, 0s;
+}
+
+div#main section h1 {
 	text-align: center;
 	line-height: 1em;
 }
 
+div#main section table {
+	text-align: left;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 1px solid white;
+}
+
+div#main section table td, div#main section table th {
+	padding: 0 0.5em;
+	border: 1px solid white;
+}
+
 
 div#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	text-align: center;
 	color: rgb(12, 183, 240);
 }
