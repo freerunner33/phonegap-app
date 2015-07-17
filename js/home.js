@@ -71,4 +71,4 @@ document.addEventListener('deviceready', function() {
 // 		$("div#main section#" + $(this).attr("id")).addClass("active")
 // 		$("div#main nav a#" + $(this).attr("id")).addClass("active")
 // 	})
-// })
+})
