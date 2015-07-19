@@ -2,11 +2,7 @@
 var dining = {
 	aromas: {
 		title: "Aroma's Cafe",
-		description: "Located in the heart of Alcala Park, adjacent to the Immaculata, is USD’s award-winning coffeehouse. " +
-			"Always abuzz with activity, Aromas is the perfect setting to enjoy a beverage with friends without having to leave " +
-			"campus.</p><p>We are proud to serve local, alumni-owned, Ryan Bros. Coffee. Choose from an array of espresso " +
-			"beverages, teas, tea lattes, savory and sweet crepes made fresh to order, blended drinks, gourmet baked goods and " +
-			"salads. We also have complimentary WiFi and computers available for your use.",
+		description: "Yummy breakfast stuff",
 		page: "aromas.html"
 	},
 	berts: {
@@ -31,6 +27,7 @@ var dining = {
 	}
 }
 
+
 document.addEventListener('deviceready', function() {
 	$("div#header img").click(function() {
 		$("div#menu").toggleClass("active")
@@ -50,4 +47,11 @@ document.addEventListener('deviceready', function() {
 		$("div#main section#" + $(this).attr("id")).addClass("active")
 		$("div#main nav a#" + $(this).attr("id")).addClass("active")
 	})
+
+	$("div#collapsible h3").click(function() {
+		$(this).next("div#content").toggleClass("active")
+	})
 }, false)
+
+
+

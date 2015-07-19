@@ -1,4 +1,7 @@
-/*Top stuff, html body, tap settings*/
+/* ------------------------------------------------------------------------------------------------
+			Main Styles
+------------------------------------------------------------------------------------------------ */
+
 * {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-tap-highlight-color: transparent;
@@ -9,27 +12,20 @@ html, body {
 	padding: 0;
 	background-color: #222;
 	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
 
-/*Header stuff*/
+div#wrapper {
+	min-height: calc(100vh - 2em);
+}
+
 div#header {
 	z-index: 100;
 	position: fixed;
 	width: 100%;
 	padding: 0.5em;
 	background-color: rgb(6, 118, 194);
-	/*background-color: rgb(4, 52, 128);*/
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
-}
-
-div#header h1 {
-	color: white;
-	font-size: 1.25em;
-	text-transform: uppercase;
-	font-weight: 300;
-	vertical-align: middle;
-	display: inline-block;
-	line-height: 1em;
 }
 
 div#header img {
@@ -38,7 +34,16 @@ div#header img {
 	padding: 0.5em;
 }
 
-/*Menu stuff*/
+div#header h1 {
+	color: white;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 1em;
+	font-weight: 300;
+}
+
 div#menu {
 	position: fixed;
 	top: 0;
@@ -53,6 +58,20 @@ div#menu {
 
 div#menu.active {
 	transform: translate(0, 0);
+}
+
+div#menu a {
+	display: block;
+	width: calc(100% - 3em);
+	color: white;
+	text-decoration: none;
+	padding: 0.5em 1.5em;
+	margin: 0;
+	font-size: 1.25em;
+}
+
+div#menu a:first-child {
+	padding-top: 4em;
 }
 
 div#overlay {
@@ -78,30 +97,32 @@ div#overlay.active {
 	transition-delay: 0s, 0s;
 }
 
-div#menu a {
-	display: block;
-	width: calc(100% - 3em);
-	color: white;
-	text-decoration: none;
-	padding: 0.5em 1.5em;
+div#footer {
+	height: 2em;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	color: rgb(12, 183, 240);
+	background-color: #222;
+}
+div#footer p {
 	margin: 0;
-	font-size: 1.25em;
-	font-weight: 300;
+	color: rgb(6, 118, 194);
+	padding: 0.5em;
+	line-height: 1em;
 }
 
-div#menu a:first-child {
-	padding-top: 4em;
-}
 
-/*Main page display
-	Large dining div
-		Smaller div to hold h3 and picture div*/
+/* ------------------------------------------------------------------------------------------------
+			Home Page Styles
+------------------------------------------------------------------------------------------------ */
+
 div#dining {
 	padding-top: 4em;
 	text-align: center;
 }
 
-/*Divs to hold h3 and picture divs*/
 div#dining>div {
 	width: 100%;
 	height: 30vh;
@@ -110,15 +131,14 @@ div#dining>div {
 	overflow: hidden;
 }
 
-/*The picture divs*/
-div div div {
+div#dining div div {
 	height: 100%;
 	background-position: center;
 	background-size: cover;
 	z-index: 49;
 }
 
-div div h3 {
+div#dining div h3 {
 	z-index: 50;
 	position: absolute;
 	top: 50%;
@@ -126,18 +146,19 @@ div div h3 {
 	padding: 0;
 	margin: 0;
 	font-size: 2em;
+	font-weight: 300;
 	color: white;
 	width: 80%;
 	transform: translate(0, -50%);
-	font-weight: 300;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 	text-transform: uppercase;
 }
 
-/*Main div for each dining location
-	Will hold logo of location on top
-	div on bottom contains 3 different sections
-		nav through these sections - about, info, menu*/
+
+/* ------------------------------------------------------------------------------------------------
+			Dining Location Styles
+------------------------------------------------------------------------------------------------ */
+
 div#main {
 	padding-top: 4em;
 	color: white;
@@ -153,21 +174,22 @@ div#main nav {
 	text-align: center;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 div#main nav a {
 	display: inline-block;
 	color: #ddd;
 	width: 33%;
-	font-size: 1em;
-	padding: 0.375em 0;
+	font-size: 1.25em;
+	padding: 0.225em 0;
 	text-align: center;
 	background-color: rgb(4, 52, 128);
 }
+
 div#main nav a.active {
 	color: white;
 	background-color: rgb(4, 62, 138);
 }
 
-/*Section stuff and transitions*/
 div#main section {
 	padding: 0.5em;
 	width: calc(100% - 1em);
@@ -179,6 +201,7 @@ div#main section {
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0.5s, 0s;
 }
+
 div#main section.active {
 	/*enter*/
 	transform: translate(0, 0);
@@ -187,51 +210,61 @@ div#main section.active {
 	transition-delay: 0s, 0s;
 }
 
-/*Text in section*/
 div#main section h1 {
-	margin-top: 0.125em;
+	margin: 0.125em auto;
 	padding-bottom: 0.25em;
 	text-align: center;
 	line-height: 1em;
 	border-bottom: 1px solid white;
+	font-weight: 300;
 }
+
 div#main section h4 {
 	margin: 0.5em 0;
+	font-weight: 300;
 }
+
 div#main section p {
 	margin-top: 0.5em;
 	margin-bottom: 1em;
 }
 
-/*Table for menu*/
-div#main section table {
-	text-align: left;
-	margin: 0 auto;
-	border-collapse: collapse;
-	border: 1px solid white;
+div#main section#menu div#collapsible {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
 }
 
-div#main section table td, div#main section table th {
-	padding: 0 0.5em;
-	border: 1px solid white;
-}
-
-/*Footer and wrapper*/
-div#wrapper {
-	min-height: calc(100vh - 2em);
-}
-div#footer {
-	height: 2em;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	color: rgb(12, 183, 240);
-	background-color: #222;
-}
-div#footer p {
-	margin: 0;
-	color: rgb(6, 118, 194);
+div#main section#menu div#collapsible h3 {
+	margin-top: 0;
+	margin-bottom: 0.25em;
 	padding: 0.5em;
-	line-height: 1em;
+	padding-left: 1em;
+	background-color: rgb(4, 52, 128);
+	font-weight: 300;
+}
+
+div#main section#menu div#collapsible div#content {
+	display: none;
+}
+
+div#main section#menu div#collapsible div#content.active {
+	display: block;
+}
+
+div#main section#menu div#collapsible div#content p {
+	font-size: 0.875em;
+	margin: 0.5em 1em;
+}
+
+div#main section#menu div#collapsible div#content table {
+	text-align: left;
+	margin: 0.5em 1em;
+	border-collapse: collapse;
+	border: 1px solid #444;
+}
+
+div#main section#menu div#collapsible table td, div#main section#menu div#collapsible table th {
+	font-size: 0.875em;
+	padding: 0.25em 0.5em;
+	border: 1px solid #444;
 }

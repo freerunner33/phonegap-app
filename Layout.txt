@@ -1,0 +1,47 @@
+Layout
+
+Home - Campus Dining
+	div id:wrapper
+		div id:header
+			img - menu
+			h1
+		div id:menu class:active
+			a href:html pages
+		div id:overlay class:active
+		div id:dining
+			div id:nameofrestaurant
+				div style:background-image
+				h3
+	div id:footer
+		p
+
+Dining Location - Aroma's Cafe
+	div id:wrapper
+		div id:header
+			img - menu
+			h1
+		div id:menu class:active
+			a href:html pages
+		div id:overlay class:active
+		div id:main
+			img src:Aromas.jpg
+			nav
+				a id:about class:active
+			section id:about class:active
+				h1 - About
+				p
+			section id:info class:active
+				h1 - Information
+				h4 - Location
+				p
+				h4 - Hours
+				p
+			section id:menu class:active
+				h1 - Menu
+				div id:collapsible
+					h3 - Drinks
+					div id:content class:active
+						h6
+						table, p, a
+	div id:footer
+		p
