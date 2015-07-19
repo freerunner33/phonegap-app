@@ -1,32 +1,4 @@
 
-var dining = {
-	aromas: {
-		title: "Aroma's Cafe",
-		description: "Yummy breakfast stuff",
-		page: "aromas.html"
-	},
-	berts: {
-		title: "Bert's Bistro",
-		description: "Fantastic for lunch",
-		page: "berts.html"
-	},
-	bluespoon: {
-		title: "Blue Spoon",
-		description: "Apparently serves good stuff",
-		page: "bluespoon.html"
-	},
-	lagranterraza: {
-		title: "La Gran Terraza",
-		description: "I'm so fancy",
-		page: "lagranterraza.html"
-	},
-	lapaloma: {
-		title: "La Paloma",
-		description: "Great restaurant for breakfast and lunch.",
-		page: "lapaloma.html"
-	}
-}
-
 
 document.addEventListener('deviceready', function() {
 	$("div#header img").click(function() {
@@ -38,7 +10,7 @@ document.addEventListener('deviceready', function() {
 		$("div#overlay").toggleClass("active")
 	})
 	$("div#dining>div").click(function() {
-		open(dining[$(this).attr('id')].page, "_self")
+		open($(this).attr("id") + ".html", "_self")
 	})
 
 	$("div#main nav a").click(function() {
@@ -52,6 +24,5 @@ document.addEventListener('deviceready', function() {
 		$(this).next("div#content").toggleClass("active")
 	})
 }, false)
-
 
 
