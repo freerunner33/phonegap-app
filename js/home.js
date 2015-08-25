@@ -206,9 +206,7 @@ var menu = [
 
 
 document.addEventListener('deviceready', function() {
-	alert("Welcome")
-
-	//fillTables()
+	fillTables()
 
 	$("div#header img").click(function() {
 		$("div#menu").toggleClass("active")
