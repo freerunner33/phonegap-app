@@ -28,12 +28,14 @@ document.addEventListener('deviceready', function() {
 		alert("clicked")
 		$(this).next("div#content").toggleClass("active")
 	})
+	$("section#menu h1").click(function() {
+		alert("clicked h1")
+	})
 }, false)
 
 function fillTables() {
 	
 /////////////////////////////////////////////////////////////////////////////////
-	alert("Hacking...")
 	var output = $('section#menu')
 	output.append('<h1>Menu</h1>')
 	var category = ''
