@@ -25,6 +25,7 @@ document.addEventListener('deviceready', function() {
 	})
 
 	$("div#collapsible h3").click(function() {
+		alert("clicked")
 		$(this).next("div#content").toggleClass("active")
 	})
 }, false)
@@ -43,7 +44,6 @@ function fillTables() {
 		jsonp: 'jsoncallback',
 		timeout: 0,
 		success: function(data, status) {
-			alert("Success")
 			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
 				categories.push({
 					name: item.name,  
@@ -68,12 +68,9 @@ function fillTables() {
 			})
 		},
 		error: function() {
-			alert("Error")
-			output.text('There was an error loading the data. Please connect your device to an ' + 
-				'internet connection for up-to-date dining information.')
+			alert("Please connect to an internet connection for up to date dining information")
 		},
 		complete: function() {
-			alert("Complete")
 			$.each(categories, function(i, cat) {
 				var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content" class="active">'
 				str += '<table><tr>'
@@ -87,7 +84,6 @@ function fillTables() {
 
 				$.each(menu, function(j, item) {
 					if (item.category == cat.name) {
-						alert("Adding: " + item.name)
 						str += '<tr><td>' + item.name + '</td>'
 						str += (item.price1) ? '<td>' + item.price1 + '</td>' : ''
 						str += (item.price2) ? '<td>' + item.price2 + '</td>' : ''
