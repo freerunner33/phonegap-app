@@ -30,6 +30,7 @@ document.addEventListener('deviceready', function() {
 	})
 	$("section#menu h1").click(function() {
 		alert("clicked h1")
+		$("section#menu div#content").toggleClass("active")
 	})
 }, false)
 
