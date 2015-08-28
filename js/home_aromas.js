@@ -87,6 +87,7 @@ function fillTables() {
 
 				$.each(menu, function(j, item) {
 					if (item.category == cat.name) {
+						alert("Adding: " + item.name)
 						str += '<tr><td>' + item.name + '</td>'
 						str += (item.price1) ? '<td>' + item.price1 + '</td>' : ''
 						str += (item.price2) ? '<td>' + item.price2 + '</td>' : ''
