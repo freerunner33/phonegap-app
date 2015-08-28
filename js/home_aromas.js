@@ -24,7 +24,7 @@ document.addEventListener('deviceready', function() {
 		$("div#main nav a#" + $(this).attr("id")).addClass("active")
 	})
 
-	$("div#collapsible h3").click(function() {
+	$("div#collapsible").click(function() {
 		alert("clicked")
 		$(this).next("div#content").toggleClass("active")
 	})
