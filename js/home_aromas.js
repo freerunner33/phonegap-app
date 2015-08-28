@@ -37,7 +37,7 @@ function fillTables() {
 	var category = ''
 
 	$.ajax({
-		url: 'http://noahthomas.us/USD/menu_1.php',
+		url: 'http://noahthomas.us/USD/menu_aromas.php',
 		dataType: 'jsonp',
 		jsonp: 'jsoncallback',
 		timeout: 0,
