@@ -44,28 +44,28 @@ function fillTables() {
 		timeout: 0,
 		success: function(data, status) {
 			alert("Success")
-			// $.each(data[1], function(i, item) { 	// assigns data[1][i] to item
-			// 	categories.push({
-			// 		name: item.name,  
-			// 		size1: item.size1, 
-			// 		size2: item.size2, 
-			// 		size3: item.size3, 
-			// 		size4: item.size4, 
-			// 		size5: item.size5
-			// 	})
-			// })
+			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
+				categories.push({
+					name: item.name,  
+					size1: item.size1, 
+					size2: item.size2, 
+					size3: item.size3, 
+					size4: item.size4, 
+					size5: item.size5
+				})
+			})
 
-			// $.each(data[0], function(i, item) { 	// assigns data[0][i] to item
-			// 	menu.push({
-			// 		name: item.name, 
-			// 		category: item.category, 
-			// 		price1: item.price1, 
-			// 		price2: item.price2, 
-			// 		price3: item.price3, 
-			// 		price4: item.price4, 
-			// 		price5: item.price5
-			// 	})
-			// })
+			$.each(data[0], function(i, item) { 	// assigns data[0][i] to item
+				menu.push({
+					name: item.name, 
+					category: item.category, 
+					price1: item.price1, 
+					price2: item.price2, 
+					price3: item.price3, 
+					price4: item.price4, 
+					price5: item.price5
+				})
+			})
 		},
 		error: function() {
 			alert("Error")
