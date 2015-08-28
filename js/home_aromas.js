@@ -25,8 +25,7 @@ document.addEventListener('deviceready', function() {
 	})
 
 	$("section#menu").on("click", "div#collapsible h3", function() {
-		alert("clicked h3!!!")
-		//$(this).next("div#content").toggleClass("active")
+		$(this).next("div#content").toggleClass("active")
 	})
 }, false)
 
