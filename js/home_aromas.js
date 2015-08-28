@@ -75,7 +75,7 @@ function fillTables() {
 		complete: function() {
 			alert("Complete")
 			$.each(categories, function(i, cat) {
-				var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
+				var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content" class="active">'
 				str += '<table><tr>'
 				str += '<th>Name</th>'
 				str += (cat.size1) ? '<th>' + cat.size1 + '</th>' : ''
