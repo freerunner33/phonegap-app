@@ -1,7 +1,8 @@
 
 
 document.addEventListener('deviceready', function() {
-	
+	fillTables()
+
 // register event listeners on stuff for clicking
 	$("div#header img").click(function() {
 		$("div#menu").toggleClass("active")
@@ -25,10 +26,14 @@ document.addEventListener('deviceready', function() {
 	$("div#collapsible h3").click(function() {
 		$(this).next("div#content").toggleClass("active")
 	})
+}, false)
 
+function fillTables() {
+	
 /////////////////////////////////////////////////////////////////////////////////
 	alert("Hacking...")
-	var output = $('#output')
+	var output = $('section#menu')
+	output.appen('<h1>Menu</h1>')
 	var category = ''
 
 	$.ajax({
@@ -95,10 +100,8 @@ document.addEventListener('deviceready', function() {
 
 				output.append(str)
 			})
-
 		}
 	})
 ////////////////////////////////////////////////////////////////////
-
-
-}, false)
+	//$('section#menu').html('<h1>Menu</h1>' + html)
+}
