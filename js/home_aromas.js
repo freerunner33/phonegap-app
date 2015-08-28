@@ -1,4 +1,5 @@
-
+var categories = []
+var menu = []
 
 document.addEventListener('deviceready', function() {
 	fillTables()
