@@ -44,8 +44,6 @@ function fillTables() {
 		success: function(data, status) {
 			var categories = []
 			var menu = []
-			alert("Adding menu items")
-
 			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
 				categories.push({
 					name: item.name,  
@@ -75,6 +73,7 @@ function fillTables() {
 		},
 		complete: function() {
 			if (menu != null) {
+				alert("writing stuff")
 				$.each(categories, function(i, cat) {
 					var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
 					str += '<table><tr>'
