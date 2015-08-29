@@ -8,7 +8,7 @@
 		<name>USD Dining App</name>
 		<description>Lovely little app</description>
 		<author href='noahthomas.us' email='007noahthomas@gmail.com'>Noah Thomas</author>
-		<icon src="icon.png" />
+		<icon src="icon.png"/>
 		
 		<preference name='DisallowOverscroll' value='true' />
 		<preference name='UIWebViewBounce' value='false' />

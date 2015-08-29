@@ -44,6 +44,7 @@ function fillTables() {
 		success: function(data, status) {
 			var categories = []
 			var menu = []
+			alert("Adding menu items")
 
 			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
 				categories.push({
@@ -69,10 +70,11 @@ function fillTables() {
 			})
 		},
 		error: function() {
+			alert("error")
 			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
 		},
 		complete: function() {
-			if (menu && categories) {
+			if (menu != null) {
 				$.each(categories, function(i, cat) {
 					var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
 					str += '<table><tr>'
