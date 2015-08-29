@@ -1,4 +1,7 @@
 
+var menu = []
+var categories = []
+
 document.addEventListener('deviceready', function() {
 	fillTables()
 
@@ -40,8 +43,6 @@ function fillTables() {
 		jsonp: 'jsoncallback',
 		timeout: 0,
 		success: function(data, status) {
-			var categories = []
-			var menu = []
 			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
 				categories.push({
 					name: item.name,  
@@ -67,7 +68,6 @@ function fillTables() {
 			alert("First menu size is " + menu.length)
 		},
 		error: function() {
-			alert("error")
 			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
 		},
 		complete: function() {
