@@ -71,8 +71,8 @@ function fillTables() {
 			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
 		},
 		complete: function() {
+			alert("Second menu size is " + menu.length)
 			if (menu != null) {
-				alert("Second menu size is " + menu.length)
 				$.each(categories, function(i, cat) {
 					var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
 					str += '<table><tr>'
