@@ -66,6 +66,7 @@ function fillTables() {
 					price5: item.price5
 				})
 			})
+			alert("First menu size is " + menu.length)
 		},
 		error: function() {
 			alert("error")
@@ -73,7 +74,7 @@ function fillTables() {
 		},
 		complete: function() {
 			if (menu != null) {
-				alert("writing stuff")
+				alert("Second menu size is " + menu.length)
 				$.each(categories, function(i, cat) {
 					var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
 					str += '<table><tr>'
