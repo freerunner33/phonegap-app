@@ -1,210 +1,11 @@
-// menu array: category, sizes for category, array of items in category
-	// items: name, prices corresponding to sizes in category
 
-var menu = [
-	{
-		category: 'Refreshers - Iced Beverages',
-		sizes: ',Tall,Grande,Venti,Trenta',
-		tables: [
-			[
-				{
-					itemname: 'Cool Lime',
-					price: '3.29,3.79,4.29,4.79'
-				},
-				{
-					itemname: 'Very Berry Hibiscus',
-					price: '3.29,3.79,4.29,4.79'
-				}
-			]
-		]
-	},
-	{
-		category: 'Iced Coffee &amp; Iced Tazo Tea',
-		sizes: ',Tall,Grande,Venti,Trenta',
-		tables: [
-			[
-				{
-					itemname: 'Iced Coffee',
-					price: '2.19,2.59,2.99,3.49'
-				},
-				{
-					itemname: 'Iced Coffee with Milk',
-					price: '2.19,2.59,2.99,3.49'
-				},
-				{
-					itemname: 'Shaken Iced Tazo Tea',
-					price: '1.99,2.49,2.99,3.29'
-				},
-				{
-					itemname: 'Iced Tazo Tea Lemonade',
-					price: '2.99,3.49,3.99,4.29'
-				}
-			]
-		]
-	},
-	{
-		category: 'Coffee, Tazo Tea &amp; more',
-		sizes: ',Tall,Grande,Venti',
-		tables: [
-			[
-				{
-					itemname: 'Freshly Brewed Cofee',
-					price: '1.99,2.19,2.49'
-				},
-				{
-					itemname: 'Caffe Misto',
-					price: '1.99,2.19,2.49'
-				},
-				{
-					itemname: 'Tazo Chai Tea Latte',
-					price: '3.49,4.29,4.49'
-				},
-				{
-					itemname: 'Full-Leaf Tazo Tea',
-					price: '2.29,2.49,2.79'
-				},
-				{
-					itemname: 'Hot Chocolate',
-					price: '2.99,3.39,3.69'
-				},
-				{
-					itemname: 'Kid\'s Hot Chocolate',
-					price: '2.89'
-				}
-			]
-		]
-	},
-	{
-		category: 'Frappuccino - Blended Beverages',
-		sizes: 'Coffee,Tall,Grande,Venti;Creme (coffee-free),Tall,Grande,Venti',
-		tables: [
-			[
-				{
-					itemname: 'Caramel',
-					price: '4.29,4.99,5.49'
-				},
-				{
-					itemname: 'Mocha',
-					price: '4.29,4.99,5.49'
-				},
-				{
-					itemname: 'Java Chip',
-					price: '4.29,4.99,5.49'
-				},
-				{
-					itemname: 'Coffee',
-					price: '3.59,4.29,4.99'
-				},
-				{
-					itemname: 'White Chocolate Mocha',
-					price: '4.29,4.94,5.49'
-				},
-				{
-					itemname: 'Mocha Light',
-					price: '4.29,4.99,5.49'
-				}
-			],
-			[
-				{
-					itemname: 'Vanilla Bean',
-					price: '3.59,4.29,4.99'
-				},
-				{
-					itemname: 'Strawberries &amp; Creme',
-					price: '4.29,4.99,5.49'
-				},
-				{
-					itemname: 'Double Chocolatey Chip',
-					price: '4.29,4.99,5.49'
-				},
-				{
-					itemname: 'Green Tea',
-					price: '4.29,4.99,5.49'
-				}
-			]
-		]
-	},
-	{
-		category: 'Smoothies (Contains Dairy)',
-		sizes: 'Flavor,16.oz',
-		tables: [
-			[
-				{
-					itemname: 'Chocolate',
-					price: '4.49'
-				},
-				{
-					itemname: 'Orange Mango',
-					price: '4.49'
-				},
-				{
-					itemname: 'Strawberry',
-					price: '4.49'
-				}
-			]
-		]
-	},
-	{
-		category: 'Expresso',
-		sizes: 'Signature,Tall,Grande,Venti;Classics,Tall,Grande,Venti;,Bold (1 oz),Doppio (2 oz)',
-		tables: [
-			[
-				{
-					itemname: 'Caramel Macchiato',
-					price: '3.99,4.79,4.99'
-				},
-				{
-					itemname: 'White Chocolate Mocha',
-					price: '3.99,4.79,4.99'
-				},
-				{
-					itemname: 'Cinnamon Dolce Latte',
-					price: '3.99,4.79,4.99'
-				}
-			],
-			[
-				{
-					itemname: 'Caffe Latte',
-					price: '3.69,3.99,4.39'
-				},
-				{
-					itemname: 'Caffe Mocha',
-					price: '4.29,4.59,4.89'
-				},
-				{
-					itemname: 'Iced Caffe Mocha',
-					price: '3.99,4.79,5.29'
-				},
-				{
-					itemname: 'Vanilla Latte',
-					price: '4.29,4.59,4.89'
-				},
-				{
-					itemname: 'Skinny Vanilla Latte',
-					price: '4.29,4.59,4.99'
-				},
-				{
-					itemname: 'Caffe Americano',
-					price: '2.49,2.79,3.29'
-				},
-				{
-					itemname: 'Cappuccino',
-					price: '3.69,3.99,4.39'
-				}
-			],
-			[
-				{
-					itemname: 'Espresso',
-					price: '2.99,3.99'
-				}
-			]
-		]
-	}
-]
+var menu = []
+var categories = []
 
 document.addEventListener('deviceready', function() {
-	fillTables()
+	fillTables($("div#header").attr("name"))
 
+// register event listeners on stuff for clicking
 	$("div#header img").click(function() {
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
@@ -224,39 +25,80 @@ document.addEventListener('deviceready', function() {
 		$("div#main nav a#" + $(this).attr("id")).addClass("active")
 	})
 
-	$("div#collapsible h3").click(function() {
+	$("section#menu").on("click", "div#collapsible h3", function() {
 		$(this).next("div#content").toggleClass("active")
 	})
 }, false)
 
-function fillTables() {
-	var html = ''
-	for (i = 0; i < menu.length; i++) {
-		var category = menu[i].category // main category of section
-		var sizes = menu[i].sizes.split(';') // array of table header names
-		var tables = menu[i].tables // array of arrays containing items
-		
-		html += '<div id="collapsible"><h3>' + category + '</h3>' + '<div id="content">'
-		for (t = 0; t < tables.length; t++) {
-			html += '<table>'
-			html += '<tr>'
-			var sizeArr = sizes[t].split(',')
-			for (h = 0; h < sizeArr.length; h++) {
-				html += '<th>' + sizeArr[h] + '</th>'
-			}
-			html += '</tr>'
-			for (r = 0; r < tables[t].length; r++) { // [item1 item2 item3]
-				html += '<tr>'
-				html += '<td>' + tables[t][r].itemname + '</td>'
-				priceArr = tables[t][r].price.split(',')
-				for (p = 0; p < priceArr.length; p++) {
-					html += '<td>' + priceArr[p] + '</td>'
+function fillTables(diningID) {
+	var output = $('section#menu')
+	output.append('<h1>Menu</h1>')
+	var category = ''
+
+	$.ajax({
+		url: 'http://noahthomas.us/USD/info.php',
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 0,
+		success: function(data, status) {
+			$.each(data[0], function(i, item) { 	// for every category, add to categories array
+				if (item.dining_id == diningID) { 	// only place in if correct dining location
+					categories.push({
+						name: item.name,  
+						size1: item.size1, 
+						size2: item.size2, 
+						size3: item.size3, 
+						size4: item.size4, 
+						size5: item.size5
+					})
 				}
-				html += '</tr>'
-			}
-			html += '</table>'
+			})
+			$.each(data[1], function(i, item) { 	// for every menu item, add to item array
+				if (item.dining_id == diningID) {	// only place in if correct dining location
+					menu.push({
+						name: item.name, 
+						category: item.category, 
+						price1: item.price1, 
+						price2: item.price2, 
+						price3: item.price3, 
+						price4: item.price4, 
+						price5: item.price5
+					})
+				}
+			})
+		},
+		error: function() {
+			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
+		},
+		complete: function() {
+			$.each(categories, function(i, cat) {
+				var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
+				str += '<table><tr>'
+				str += '<th>Name</th>'
+				str += (cat.size1) ? '<th>' + cat.size1 + '</th>' : ''
+				str += (cat.size2) ? '<th>' + cat.size2 + '</th>' : ''
+				str += (cat.size3) ? '<th>' + cat.size3 + '</th>' : ''
+				str += (cat.size4) ? '<th>' + cat.size4 + '</th>' : ''
+				str += (cat.size5) ? '<th>' + cat.size5 + '</th>' : ''
+				str += '</tr>'
+
+				$.each(menu, function(j, item) {
+					if (item.category == cat.name) {
+						str += '<tr><td>' + item.name + '</td>'
+						str += (item.price1) ? '<td>' + item.price1 + '</td>' : ''
+						str += (item.price2) ? '<td>' + item.price2 + '</td>' : ''
+						str += (item.price3) ? '<td>' + item.price3 + '</td>' : ''
+						str += (item.price4) ? '<td>' + item.price4 + '</td>' : ''
+						str += (item.price5) ? '<td>' + item.price5 + '</td>' : ''
+						str += '</tr>'
+					}
+				})
+				
+				str += '</table>'
+				str += '</div></div>'
+
+				output.append(str)
+			})
 		}
-		html += '</div></div>'
-	}
-	$('section#menu').html('<h1>Menu</h1>' + html)
+	})
 }
