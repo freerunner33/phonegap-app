@@ -54,7 +54,7 @@ function fillTables() {
 				})
 			})
 
-			$.each(data[0], function(i, item) { 	// for every menu item, add to item array
+			$.each(data[1], function(i, item) { 	// for every menu item, add to item array
 				menu.push({
 					name: item.name, 
 					category: item.category, 
