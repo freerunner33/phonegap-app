@@ -30,9 +30,7 @@ document.addEventListener('deviceready', function() {
 	})
 }, false)
 
-function fillTables(shortname) {
-	alert("shortname is: " + shortname)
-
+function fillTables(diningID) {
 	var output = $('section#menu')
 	output.append('<h1>Menu</h1>')
 	var category = ''
@@ -44,26 +42,29 @@ function fillTables(shortname) {
 		timeout: 0,
 		success: function(data, status) {
 			$.each(data[0], function(i, item) { 	// for every category, add to categories array
-				categories.push({
-					name: item.name,  
-					size1: item.size1, 
-					size2: item.size2, 
-					size3: item.size3, 
-					size4: item.size4, 
-					size5: item.size5
-				})
+				if (item.dining_id == diningID) { 	// only place in if correct dining location
+					categories.push({
+						name: item.name,  
+						size1: item.size1, 
+						size2: item.size2, 
+						size3: item.size3, 
+						size4: item.size4, 
+						size5: item.size5
+					})
+				}
 			})
-
 			$.each(data[1], function(i, item) { 	// for every menu item, add to item array
-				menu.push({
-					name: item.name, 
-					category: item.category, 
-					price1: item.price1, 
-					price2: item.price2, 
-					price3: item.price3, 
-					price4: item.price4, 
-					price5: item.price5
-				})
+				if (item.dining_id == diningID) {	// only place in if correct dining location
+					menu.push({
+						name: item.name, 
+						category: item.category, 
+						price1: item.price1, 
+						price2: item.price2, 
+						price3: item.price3, 
+						price4: item.price4, 
+						price5: item.price5
+					})
+				}
 			})
 		},
 		error: function() {
