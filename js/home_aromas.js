@@ -38,12 +38,12 @@ function fillTables() {
 	var category = ''
 
 	$.ajax({
-		url: 'http://noahthomas.us/USD/menu_aromas.php',
+		url: 'http://noahthomas.us/USD/info.php',
 		dataType: 'jsonp',
 		jsonp: 'jsoncallback',
 		timeout: 0,
 		success: function(data, status) {
-			$.each(data[1], function(i, item) { 	// assigns data[1][i] to item
+			$.each(data[0], function(i, item) { 	// for every category, add to categories array
 				categories.push({
 					name: item.name,  
 					size1: item.size1, 
@@ -54,7 +54,7 @@ function fillTables() {
 				})
 			})
 
-			$.each(data[0], function(i, item) { 	// assigns data[0][i] to item
+			$.each(data[0], function(i, item) { 	// for every menu item, add to item array
 				menu.push({
 					name: item.name, 
 					category: item.category, 
