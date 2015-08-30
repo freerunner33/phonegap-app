@@ -3,7 +3,7 @@ var menu = []
 var categories = []
 
 document.addEventListener('deviceready', function() {
-	fillTables()
+	fillTables($("div#header").attr("header"))
 
 // register event listeners on stuff for clicking
 	$("div#header img").click(function() {
@@ -30,9 +30,9 @@ document.addEventListener('deviceready', function() {
 	})
 }, false)
 
-function fillTables() {
+function fillTables(shortname) {
+	alert("shortname is: " + shortname)
 	
-/////////////////////////////////////////////////////////////////////////////////
 	var output = $('section#menu')
 	output.append('<h1>Menu</h1>')
 	var category = ''
@@ -100,5 +100,4 @@ function fillTables() {
 			})
 		}
 	})
-////////////////////////////////////////////////////////////////////
 }
