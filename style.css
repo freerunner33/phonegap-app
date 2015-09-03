@@ -136,6 +136,11 @@ div#dining div div {
 	background-position: center;
 	background-size: cover;
 	z-index: 49;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);;
 }
 
 div#dining div h3 {

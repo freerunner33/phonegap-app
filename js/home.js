@@ -71,6 +71,9 @@ function fillTables(diningID) {
 			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
 		},
 		complete: function() {
+			if (categories.length < 1) {
+				output.append('<p>No menu information available at this time. Please visit dining location for menu.</p>')
+			}
 			$.each(categories, function(i, cat) {
 				var str = '<div id="collapsible"><h3>' + cat.name + '</h3><div id="content">'
 				str += '<table><tr>'
