@@ -160,6 +160,7 @@ div#dining div img {
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
 	filter: blur(5px);
+	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
 	left: 0;
 	top: 50%;
