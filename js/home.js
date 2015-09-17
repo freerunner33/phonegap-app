@@ -3,6 +3,7 @@ var menu = []
 var categories = []
 
 document.addEventListener('deviceready', function() {
+	alert("Welcome!")
 	fillTables($("div#header").attr("name"))
 
 // register event listeners on stuff for clicking
