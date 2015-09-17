@@ -7,19 +7,24 @@ document.addEventListener('deviceready', function() {
 	fillTables($("div#header").attr("name"))
 
 // register event listeners on stuff for clicking
+	alert("Register click handlers for menu button")
 	$("div#header img").click(function() {
+		alert("menu button clicked")
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
 	})
 	$("div#overlay").click(function() {
+		alert("overlay clicked")
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
 	})
 	$("div#dining>div").click(function() {
+		alert("dining div picture clicked")
 		open($(this).attr("id") + ".html", "_self")
 	})
 
 	$("div#main nav a").click(function() {
+		alert("menu item clicked")
 		$("div#main section.active").removeClass("active")
 		$("div#main nav a.active").removeClass("active")
 		$("div#main section#" + $(this).attr("id")).addClass("active")
@@ -32,6 +37,8 @@ document.addEventListener('deviceready', function() {
 }, false)
 
 function fillTables(diningID) {
+	alert("line 1 of fillTables()")
+
 	var output = $('section#menu')
 	output.append('<h1>Menu</h1>')
 	var category = ''
@@ -42,6 +49,7 @@ function fillTables(diningID) {
 		jsonp: 'jsoncallback',
 		timeout: 0,
 		success: function(data, status) {
+			alert("success in ajax call")
 			$.each(data[0], function(i, item) { 	// for every category, add to categories array
 				if (item.dining_id == diningID) { 	// only place in if correct dining location
 					categories.push({
@@ -69,9 +77,11 @@ function fillTables(diningID) {
 			})
 		},
 		error: function() {
+			alert("error in ajax call")
 			output.append('<p>Please connect to an internet connection for up to date dining information</p>')
 		},
 		complete: function() {
+			alert("complete in ajax call")
 			if (categories.length < 1) {
 				output.append('<p>No menu information available at this time. Please visit dining location for menu.</p>')
 			}
