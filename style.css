@@ -52,11 +52,15 @@ div#menu {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 1);
 	z-index: 99;
+	-webkit-transform: translate(-12.5em, 0);
+	-webkit-transition: transform 0.25s ease, opacity 2s ease;
+	
 	transform: translate(-12.5em, 0);
 	transition: transform 0.25s ease, opacity 2s ease;
 }
 
 div#menu.active {
+	-webkit-transform: translate(0, 0);
 	transform: translate(0, 0);
 }
 
@@ -83,16 +87,22 @@ div#overlay {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 98;
 	/*exit of overlay*/
+	-webkit-transform: translate(-100%, 0);
 	transform: translate(-100%, 0);
 	opacity: 0;
+	-webkit-transition: transform 0s ease, opacity 0.5s ease;
+	-webkit-transition-delay: 0.5s, 0s;
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0.5s, 0s;
 }
 
 div#overlay.active {
 	/*intro to overlay*/
+	-webkit-transform: translate(0, 0);
 	transform: translate(0, 0);
 	opacity: 1;
+	-webkit-transition: transform 0s ease, opacity 0.5s ease;
+	-webkit-transition-delay: 0s, 0s;
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0s, 0s;
 }
@@ -154,6 +164,7 @@ div#dining div h3 {
 	font-weight: 300;
 	color: white;
 	width: 80%;
+	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 	text-transform: uppercase;
@@ -199,18 +210,24 @@ div#main section {
 	padding: 0.5em;
 	width: calc(100% - 1em);
 	position: absolute;
-	
+	//////////////////////////////////////////
 	/*exit*/
+	-webkit-transform: translate(-100%, 0);
 	transform: translate(-100%, 0);
 	opacity: 0;
+	-webkit-transition: transform 0s ease, opacity 0.5s ease;
+	-webkit-transition-delay: 0.5s, 0s;
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0.5s, 0s;
 }
 
 div#main section.active {
 	/*enter*/
+	-webkit-transform: translate(0, 0);
 	transform: translate(0, 0);
 	opacity: 1;
+	-webkit-transition: transform 0s ease, opacity 0.5s ease;
+	-webkit-transition-delay: 0s, 0s;
 	transition: transform 0s ease, opacity 0.5s ease;
 	transition-delay: 0s, 0s;
 }
