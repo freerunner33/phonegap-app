@@ -161,6 +161,8 @@ div#dining div img {
 	filter: blur(5px);
 	transform: translate(0, -40%);
 	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
 	width: 100%;
 }
 

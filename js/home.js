@@ -7,22 +7,18 @@ document.addEventListener('deviceready', function() {
 
 // register event listeners on stuff for clicking
 	$("div#header img").click(function() {
-		alert("menu button clicked")
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
 	})
 	$("div#overlay").click(function() {
-		alert("overlay clicked")
 		$("div#menu").toggleClass("active")
 		$("div#overlay").toggleClass("active")
 	})
 	$("div#dining>div").click(function() {
-		alert("dining div picture clicked")
 		open($(this).attr("id") + ".html", "_self")
 	})
 
 	$("div#main nav a").click(function() {
-		alert("menu item clicked")
 		$("div#main section.active").removeClass("active")
 		$("div#main nav a.active").removeClass("active")
 		$("div#main section#" + $(this).attr("id")).addClass("active")
