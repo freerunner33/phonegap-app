@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 	<widget xmlns 	= 'http://www.w3.org/ns/widgets'
 		xmlns:gap 	= 'http://phonegap.com/ns/1.0'
-		id 			= 'com.noah.app'
-		versionCode = '11'
-		version 	= '1.0.1'>
+		id 			= 'com.noah.usddining'
+		versionCode = '12'
+		version 	= '1.0.2'>
 		<gap:platform name='android'/>
 		<gap:platform name='ios'/>
+
 		<name>USD Dining</name>
-		<description>Lovely little app</description>
+		<description>App to provide users with up to date dining information</description>
 		<author href='noahthomas.us' email='007noahthomas@gmail.com'>Noah Thomas</author>
 		<icon src="images/icon.png"/>
 		
