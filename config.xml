@@ -5,6 +5,7 @@
 		versionCode = '11'
 		version 	= '1.0.1'>
 		<gap:platform name='android'/>
+		<gap:platform name='ios'/>
 		<name>USD Dining</name>
 		<description>Lovely little app</description>
 		<author href='noahthomas.us' email='007noahthomas@gmail.com'>Noah Thomas</author>
